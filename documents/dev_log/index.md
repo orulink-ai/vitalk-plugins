@@ -79,3 +79,7 @@ TDD：分别新增目录 validateListing/buildCatalog 与 publisher buildListing
 ## 2026-10-06 02:12 Asia/Shanghai｜Codex｜真实更新清单合入
 
 PR #4 已检查成功并merge，合入5c42faa8b9f9d1dd32488b07e22bbe1a845f70ac两个parent已核对，Pages实际GET含1.0.1/1.0.0。下一步通过隔离原生1.0.1→1.0.2更新走查；此前1.0.0安装已验证，300秒测试进程自动结束，不能称其已完成更新。
+
+## 2026-10-06 02:30 Asia/Shanghai｜Codex｜实际发布与原生验收完成
+
+PR6检查成功并merge，1a2072426c063569f0c7ce5ac80b29f68f149763两个parent已核对，Pages实际GET已有1.0.2。owned PID41527完成1.0.1安装、1.0.2更新保留SDK marker、重新启用、新页面绘制、停用和默认保留数据卸载。三条合成历史、执行时DOM探针和未配置模型边界明确；真实云模型未验证。原生回执及owned窗口截图在主应用关联任务档案，更新README不再称回执待补齐。
