@@ -1,0 +1,70 @@
+[
+  {
+    "id": "vitalk.english",
+    "name": "ViTalk English",
+    "description": "将语音整理为自然英文，并回顾表达、词汇和学习反馈。",
+    "version": "1.2.0",
+    "sdkVersion": 1,
+    "permissions": [
+      "english.workspace",
+      "talkingo.read",
+      "talkingo.write"
+    ],
+    "publisher": "orulink-ai",
+    "repository": "https://github.com/orulink-ai/vitalk-plugin-english",
+    "minHostVersion": "0.6.12",
+    "packageFormat": "vitalk-feature/v1",
+    "feature": "english",
+    "artifact": {
+      "url": "https://github.com/orulink-ai/vitalk-plugin-english/releases/download/v1.2.0/vitalk.english.vitalk-feature.json",
+      "sha256": "01aad1ed6cee03181e4630becc26dc791815ce9ca3a312c933a4e9af0055ceb3",
+      "size": 711608
+    }
+  },
+  {
+    "id": "vitalk.ai-conversation",
+    "name": "AI 对话",
+    "description": "通过语音或文字对话，继续会话并按需委托任务。",
+    "version": "1.0.0",
+    "sdkVersion": 1,
+    "permissions": [
+      "history.read",
+      "history.write",
+      "storage",
+      "ai.generate",
+      "speech.transcribe"
+    ],
+    "publisher": "orulink-ai",
+    "repository": "https://github.com/orulink-ai/vitalk-plugin-ai-conversation",
+    "minHostVersion": "0.6.12",
+    "packageFormat": "vitalk-feature/v1",
+    "feature": "ai-conversation",
+    "artifact": {
+      "url": "https://github.com/orulink-ai/vitalk-plugin-ai-conversation/releases/download/v1.0.0/vitalk.ai-conversation.vitalk-feature.json",
+      "sha256": "61d0971b5efbf82a2e585f504de4a4185d2baa645a608deecc9ba7a543391b3d",
+      "size": 468
+    }
+  },
+  {
+    "id": "vitalk.voice-send",
+    "name": "语音发送",
+    "description": "保留 voice2Send 原界面：通过快捷键说出对象和内容，在浮窗确认后发送；管理表达偏好、对象热词及飞书连接。",
+    "version": "1.0.0",
+    "sdkVersion": 1,
+    "permissions": [
+      "speech.transcribe",
+      "ai.generate",
+      "storage"
+    ],
+    "publisher": "orulink-ai",
+    "repository": "https://github.com/orulink-ai/vitalk-plugin-voice-send",
+    "minHostVersion": "0.6.12",
+    "packageFormat": "vitalk-feature/v1",
+    "feature": "voice-send",
+    "artifact": {
+      "url": "https://github.com/orulink-ai/vitalk-plugin-voice-send/releases/download/v1.0.0/vitalk.voice-send.vitalk-feature.json",
+      "sha256": "e020185fe1e9e709321590f84c0fb0faf2bddcc8158dcd83a2396a78a483c2d1",
+      "size": 500
+    }
+  }
+]

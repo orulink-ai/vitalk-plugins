@@ -1,7 +1,7 @@
 import { validatePluginPackage } from "@vitalk/plugin-sdk";
 const VERSION = /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$/;
 // Match ViTalk's trusted native feature catalog; page plugins cannot claim these IDs.
-const RESERVED_FEATURE_IDS = new Set(["vitalk.english", "vitalk.ai-conversation"]);
+const RESERVED_FEATURE_IDS = new Set(["vitalk.english", "vitalk.ai-conversation", "vitalk.voice-send"]);
 const REPOSITORY =
   /^https:\/\/github\.com\/([A-Za-z0-9][A-Za-z0-9_.-]*)\/([A-Za-z0-9][A-Za-z0-9_.-]*)$/;
 export function validateListing(value, path) {

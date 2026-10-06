@@ -9,6 +9,7 @@ import { resolve, join } from "node:path";
 import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import { validateListing, buildCatalog, validateChanges } from "./catalog.mjs";
+import {buildTrustedCatalog, verifyTrustedArtifacts} from './trusted-catalog.mjs';
 const root = resolve(process.argv[2] || ".");
 function readListing(path) {
   const full = join(root, path);
@@ -106,11 +107,15 @@ if (changesFileIndex !== -1 || (process.env.BASE_SHA && process.env.HEAD_SHA)) {
   }
 }
 if (process.argv.includes("--build")) {
+  const extended=buildTrustedCatalog(catalog);
+  await verifyTrustedArtifacts(extended.plugins.filter(entry=>entry.packageFormat==='vitalk-feature/v1'));
+  mkdirSync("public", { recursive: true });
+  writeFileSync("public/catalog-v2.json",JSON.stringify(extended,null,2)+"\n");
   mkdirSync("public", { recursive: true });
   writeFileSync("public/catalog.json", JSON.stringify(catalog, null, 2) + "\n");
   writeFileSync(
     "public/index.html",
-    '<!doctype html><meta charset="utf-8"><title>ViTalk Plugin Registry</title><h1>ViTalk Plugin Registry</h1><p><a href="catalog.json">插件目录 catalog.json</a></p>',
+    '<!doctype html><meta charset="utf-8"><title>ViTalk Plugin Registry</title><h1>ViTalk Plugin Registry</h1><p><a href="catalog-v2.json">新版插件目录（含English、AI、语音发送）</a></p><p><a href="catalog.json">旧版普通插件目录</a></p>',
   );
 }
 console.log(`目录校验通过：${listings.length}个固定版本`);

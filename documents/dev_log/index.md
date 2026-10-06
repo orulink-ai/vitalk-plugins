@@ -83,3 +83,9 @@ PR #4 已检查成功并merge，合入5c42faa8b9f9d1dd32488b07e22bbe1a845f70ac�
 ## 2026-10-06 02:30 Asia/Shanghai｜Codex｜实际发布与原生验收完成
 
 PR6检查成功并merge，1a2072426c063569f0c7ce5ac80b29f68f149763两个parent已核对，Pages实际GET已有1.0.2。owned PID41527完成1.0.1安装、1.0.2更新保留SDK marker、重新启用、新页面绘制、停用和默认保留数据卸载。三条合成历史、执行时DOM探针和未配置模型边界明确；真实云模型未验证。原生回执及owned窗口截图在主应用关联任务档案，更新README不再称回执待补齐。
+
+## 2026-10-06 受信功能包公共上架
+
+关联主任务：orulink-ai/ViTalk#43，用户授权三独立仓库与Release公开发布、公共市场收录并推送。维持原community自动PR入口不变；受信原生功能是管理员维护配置。新增v2目录，同时保留旧v1普通目录；exact受审manifest/来源/SHA/大小定义及实际Release字节核对。
+
+TDD先缺trusted-catalog实现失败，补齐后目录19项测试通过；English原界面独立构建与回归、AI构建测试及voice构建TDD通过，制品与宿主pinned包一致。最低宿主0.6.12源码已接入，新应用二进制未发布。真正的硬件录音和外部发送未做本轮实机验收。
