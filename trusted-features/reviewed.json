@@ -49,7 +49,7 @@
     "id": "vitalk.voice-send",
     "name": "语音发送",
     "description": "保留 voice2Send 原界面：通过快捷键说出对象和内容，在浮窗确认后发送；管理表达偏好、对象热词及飞书连接。",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "sdkVersion": 1,
     "permissions": [
       "speech.transcribe",
@@ -58,12 +58,12 @@
     ],
     "publisher": "orulink-ai",
     "repository": "https://github.com/orulink-ai/vitalk-plugin-voice-send",
-    "minHostVersion": "0.6.12",
+    "minHostVersion": "0.6.13",
     "packageFormat": "vitalk-feature/v1",
     "feature": "voice-send",
     "artifact": {
-      "url": "https://github.com/orulink-ai/vitalk-plugin-voice-send/releases/download/v1.0.0/vitalk.voice-send.vitalk-feature.json",
-      "sha256": "e020185fe1e9e709321590f84c0fb0faf2bddcc8158dcd83a2396a78a483c2d1",
+      "url": "https://github.com/orulink-ai/vitalk-plugin-voice-send/releases/download/v1.0.1/vitalk.voice-send.vitalk-feature.json",
+      "sha256": "57a88fc952bd2924d34f68b6789359c0ac1ae1ec104d20a52333b34e9bdb7211",
       "size": 500
     }
   }
