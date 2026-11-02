@@ -1,0 +1,20 @@
+{
+  "id": "vitalk-plugin-feishu",
+  "name": "飞书",
+  "description": "通过 ViTalk 原生飞书网关连接账号，准备并确认消息，查看与完成任务、查看日程。语音快捷键按插件独立配置。",
+  "version": "0.1.0",
+  "sdkVersion": 1,
+  "permissions": [
+    "feishu.messages",
+    "feishu.tasks",
+    "feishu.calendar"
+  ],
+  "publisher": "orulink-ai",
+  "repository": "https://github.com/orulink-ai/vitalk-plugin-feishu",
+  "minHostVersion": "0.6.14",
+  "artifact": {
+    "url": "https://github.com/orulink-ai/vitalk-plugin-feishu/releases/download/v0.1.0/vitalk-plugin-feishu.vitalk-plugin.json",
+    "sha256": "20498e531b60ebdf621e5be8d659f5e4118c71a74a46f9266217da79d21be17d",
+    "size": 231381
+  }
+}
