@@ -67,3 +67,9 @@ npm --prefix publisher test
 `catalog.json`继续只包含普通SDK插件；`catalog-v2.json`同时列出普通插件和English、AI对话、语音发送。新客户端0.6.12使用v2，失败可回退v1；旧客户端仍可获取今日简报。
 
 这三个功能包各有独立仓库和固定Release，但原生能力仍取决于ViTalk宿主。管理员在`trusted-features/reviewed.json`维护已审核的精确清单、仓库、制品SHA和大小，生成时下载核对实际Release。普通发布者不能通过CLI提交保留ID，也不能仅凭仓库或ID获得原生权限。未来受信功能升级需同步宿主支持与审核定义，不能覆盖已发布版本。此文件是平台维护配置，不走第三方自动上架PR通道。
+
+## 飞书权限目录通道（2026-11-04）
+
+飞书插件使用 feishu.messages、feishu.tasks、feishu.calendar 权限。支持这些权限的宿主读取 catalog-v3.json（保持 v2 数据格式）；旧 catalog.json 与 catalog-v2.json 不包含这些清单，避免旧客户端在检查最低版本前因未知权限拒绝整个目录。最低宿主语义版本之外，还需使用已合入 ViTalk PR #90 及新版目录接入的构建，不能以旧同版本安装包推断兼容。
+
+本次 SDK 与通道属于管理员维护，不属于第三方新增 JSON 审核；现有 pull_request_target 校验边界保持不变。验证器21项及publisher纯逻辑10项通过、目录构建成功；Windows publisher CLI 模拟测试仍有既有临时 calls.jsonl 缺失，未记为通过。独立飞书正式清单另开仅新增JSON的PR，通过自动验证后部署。
