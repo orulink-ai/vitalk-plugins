@@ -1,8 +1,16 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {buildTrustedCatalog,validateTrustedListing} from './trusted-catalog.mjs';
+import {buildTrustedCatalog,validateTrustedListing,buildCatalogChannels} from './trusted-catalog.mjs';
 const reviewed=JSON.parse(readFileSync(new URL('../trusted-features/reviewed.json',import.meta.url)));
+test('Feishu permissions are only published to the capable-client channel',()=>{
+ const daily={id:'community.daily',permissions:['tasks.read']};
+ const feishu={id:'vitalk-plugin-feishu',permissions:['feishu.messages']};
+ const channels=buildCatalogChannels({format:'vitalk-plugin-catalog/v1',plugins:[daily,feishu]});
+ assert.deepEqual(channels.legacy.plugins,[daily]);
+ assert.equal(channels.v2.plugins.some(x=>x.id===feishu.id),false);
+ assert.equal(channels.v3.plugins.some(x=>x.id===feishu.id),true);
+});
 test('v2 lists three exact reviewed features, preserving community entries',()=>{
  const ordinary={id:'community.example'};
  const result=buildTrustedCatalog({format:'vitalk-plugin-catalog/v1',plugins:[ordinary]},reviewed);

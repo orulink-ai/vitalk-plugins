@@ -22,6 +22,11 @@ test("fixed release listing matches its registry path", () =>
     validateListing(listing, "plugins/example.daily/1.0.0.json"),
     listing,
   ));
+test("reviewed Feishu capabilities validate without allowing arbitrary native access", () => {
+  const entry = { ...listing, permissions: ["feishu.messages", "feishu.tasks", "feishu.calendar"] };
+  assert.deepEqual(validateListing(entry, "plugins/example.daily/1.0.0.json"), entry);
+  assert.throws(() => validateListing({ ...entry, permissions: ["feishu.exec"] }, "plugins/example.daily/1.0.0.json"));
+});
 test("reviewed daily brief can declare SDK 0.4 task permissions", () => {
   const daily = { ...listing, permissions: ["history.read", "tasks.read", "tasks.write", "ai.generate", "storage"] };
   assert.deepEqual(validateListing(daily, "plugins/example.daily/1.0.0.json"), daily);

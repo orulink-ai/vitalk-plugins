@@ -18,6 +18,11 @@ export function buildTrustedCatalog(ordinary,features=reviewed){
  }
  return {format:'vitalk-plugin-catalog/v2',plugins:[...ordinary.plugins,...features]};
 }
+// Legacy clients reject unknown permissions before checking minimum host versions.
+export function buildCatalogChannels(ordinary) {
+ const legacy={...ordinary,plugins:ordinary.plugins.filter(entry=>!entry.permissions.some(permission=>permission.startsWith('feishu.')))};
+ return {legacy,v2:buildTrustedCatalog(legacy),v3:buildTrustedCatalog(ordinary)};
+}
 export async function verifyTrustedArtifacts(features=reviewed){
  const {createHash}=await import('node:crypto');
  for(const entry of features){
