@@ -1,0 +1,20 @@
+{
+  "id": "vitalk-plugin-feishu",
+  "name": "飞书",
+  "description": "发送飞书消息、管理任务与日程，支持联系人称呼和账号授权。",
+  "version": "0.1.5",
+  "sdkVersion": 1,
+  "permissions": [
+    "feishu.messages",
+    "feishu.tasks",
+    "feishu.calendar"
+  ],
+  "publisher": "orulink-ai",
+  "repository": "https://github.com/orulink-ai/vitalk-plugin-feishu",
+  "minHostVersion": "0.6.18",
+  "artifact": {
+    "url": "https://github.com/orulink-ai/vitalk-plugin-feishu/releases/download/v0.1.5/vitalk-plugin-feishu.vitalk-plugin.json",
+    "sha256": "8d62440be10e2ae76483eb5c170b03b0e95294cb266aade61d34ff6e28cf60ed",
+    "size": 664116
+  }
+}
