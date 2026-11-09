@@ -20,7 +20,7 @@ node /你的目录/vitalk-plugins/publisher/cli.mjs \
 
 可把命令写入独立插件项目的 `package.json` 的 `scripts.publish`，之后运行 `npm run publish`。当前提供仓库内工具，尚未发布到 npm。
 
-目录校验器与 publisher 使用 vendored SDK 0.4.0，支持 `tasks.read/tasks.write` 等新公开权限；协议版本仍为 `sdkVersion:1`。需要今日简报的历史元信息、共享事项订阅和全页布局时，最低宿主版本为 0.6.11。不要把 SDK npm 版本当作客户端兼容版本。
+目录校验器与 publisher 使用 vendored SDK 0.5.0，支持 `tasks.read/tasks.write` 等新公开权限；协议版本仍为 `sdkVersion:1`。需要今日简报的历史元信息、共享事项订阅和全页布局时，最低宿主版本为 0.6.11。不要把 SDK npm 版本当作客户端兼容版本。
 
 6. PR 检查通过后，由管理员检查插件功能、权限必要性、源码及包内容。合并后生成 `catalog.json`，客户端接入这个目录后可搜索和下载安装。PR 创建成功仅表示待审核。
 7. 修复或升级发布新 Release 版本，再执行同一命令。相同字节的待审版本重复执行复用原 PR；同版本变化会拒绝覆盖，需要升版本。
@@ -73,3 +73,7 @@ npm --prefix publisher test
 飞书插件使用 feishu.messages、feishu.tasks、feishu.calendar 权限。支持这些权限的宿主读取 catalog-v3.json（保持 v2 数据格式）；旧 catalog.json 与 catalog-v2.json 不包含这些清单，避免旧客户端在检查最低版本前因未知权限拒绝整个目录。最低宿主语义版本之外，还需使用已合入 ViTalk PR #90 及新版目录接入的构建，不能以旧同版本安装包推断兼容。
 
 本次 SDK 与通道属于管理员维护，不属于第三方新增 JSON 审核；现有 pull_request_target 校验边界保持不变。验证器21项及publisher纯逻辑10项通过、目录构建成功；Windows publisher CLI 模拟测试仍有既有临时 calls.jsonl 缺失，未记为通过。独立飞书正式清单另开仅新增JSON的PR，通过自动验证后部署。
+
+## 通用原生插件通道
+
+宿主 0.6.20 使用 catalog-v4.json；v3、v2 和 legacy 不投放 native.execute、voice.commands、files.stage 权限。详见 documents/2026-11-09-sdk-050-catalog-v4.md。

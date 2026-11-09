@@ -20,8 +20,10 @@ export function buildTrustedCatalog(ordinary,features=reviewed){
 }
 // Legacy clients reject unknown permissions before checking minimum host versions.
 export function buildCatalogChannels(ordinary) {
- const legacy={...ordinary,plugins:ordinary.plugins.filter(entry=>!entry.permissions.some(permission=>permission.startsWith('feishu.')))};
- return {legacy,v2:buildTrustedCatalog(legacy),v3:buildTrustedCatalog(ordinary)};
+ const modernPermissions=new Set(['native.execute','voice.commands','files.stage','external.open']);
+ const previous={...ordinary,plugins:ordinary.plugins.filter(entry=>!entry.permissions.some(permission=>modernPermissions.has(permission)))};
+ const legacy={...previous,plugins:previous.plugins.filter(entry=>!entry.permissions.some(permission=>permission.startsWith('feishu.')))};
+ return {legacy,v2:buildTrustedCatalog(legacy),v3:buildTrustedCatalog(previous),v4:buildTrustedCatalog(ordinary)};
 }
 export async function verifyTrustedArtifacts(features=reviewed){
  const {createHash}=await import('node:crypto');
