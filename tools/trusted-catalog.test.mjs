@@ -3,6 +3,14 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {buildTrustedCatalog,validateTrustedListing,buildCatalogChannels} from './trusted-catalog.mjs';
 const reviewed=JSON.parse(readFileSync(new URL('../trusted-features/reviewed.json',import.meta.url)));
+test('native execution permissions never reach older catalog channels',()=>{
+ for(const permission of ['native.execute','voice.commands','files.stage','external.open']){
+  const modern={id:'community.native',permissions:[permission]};
+  const channels=buildCatalogChannels({format:'vitalk-plugin-catalog/v1',plugins:[modern]});
+  for(const channel of ['legacy','v2','v3']) assert.equal(channels[channel].plugins.some(x=>x.id===modern.id),false);
+  assert.equal(channels.v4.plugins.some(x=>x.id===modern.id),true);
+ }
+});
 test('Feishu permissions are only published to the capable-client channel',()=>{
  const daily={id:'community.daily',permissions:['tasks.read']};
  const feishu={id:'vitalk-plugin-feishu',permissions:['feishu.messages']};

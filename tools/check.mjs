@@ -108,10 +108,11 @@ if (changesFileIndex !== -1 || (process.env.BASE_SHA && process.env.HEAD_SHA)) {
 }
 if (process.argv.includes("--build")) {
   const channels=buildCatalogChannels(catalog);
-  const extended=channels.v3;
+  const extended=channels.v4;
   await verifyTrustedArtifacts(extended.plugins.filter(entry=>entry.packageFormat==='vitalk-feature/v1'));
   mkdirSync("public", { recursive: true });
-  writeFileSync("public/catalog-v3.json",JSON.stringify(extended,null,2)+"\n");
+  writeFileSync("public/catalog-v4.json",JSON.stringify(extended,null,2)+"\n");
+  writeFileSync("public/catalog-v3.json",JSON.stringify(channels.v3,null,2)+"\n");
   writeFileSync("public/catalog-v2.json",JSON.stringify(channels.v2,null,2)+"\n");
   mkdirSync("public", { recursive: true });
   writeFileSync("public/catalog.json", JSON.stringify(channels.legacy, null, 2) + "\n");
