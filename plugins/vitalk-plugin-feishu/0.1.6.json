@@ -15,11 +15,11 @@
     "voice.commands",
     "files.stage"
   ],
-  "publisher": "orulink-ai",
-  "repository": "https://github.com/orulink-ai/vitalk-plugin-feishu",
+  "publisher": "vilab-orulink",
+  "repository": "https://github.com/vilab-orulink/vitalk-plugin-feishu",
   "minHostVersion": "0.6.20",
   "artifact": {
-    "url": "https://github.com/orulink-ai/vitalk-plugin-feishu/releases/download/v0.1.6/vitalk-plugin-feishu.vitalk-plugin.json",
+    "url": "https://github.com/vilab-orulink/vitalk-plugin-feishu/releases/download/v0.1.6/vitalk-plugin-feishu.vitalk-plugin.json",
     "sha256": "8e3d8d55ddca1a804f2d4a9f55ded6f8285de47094de29f98cfe3fbba4e7408e",
     "size": 787967
   }

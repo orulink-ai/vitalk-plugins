@@ -1,8 +1,8 @@
 # ViTalk 插件发布工具
 
-借鉴 Raycast 一条命令创建上架 PR 的流程。开发者使用独立源码仓库和固定 GitHub Release；工具只往 [公共目录](https://github.com/orulink-ai/vitalk-plugins) 提交版本清单。
+借鉴 Raycast 一条命令创建上架 PR 的流程。开发者使用独立源码仓库和固定 GitHub Release；工具只往 [公共目录](https://github.com/vilab-orulink/vitalk-plugins) 提交版本清单。
 
-完整开发者及管理员步骤见 [公共目录指南](https://github.com/orulink-ai/vitalk-plugins#开发者如何上架)。当前工具在仓库提供，尚未发布到 npm。
+完整开发者及管理员步骤见 [公共目录指南](https://github.com/vilab-orulink/vitalk-plugins#开发者如何上架)。当前工具在仓库提供，尚未发布到 npm。
 
 ```sh
 npm ci --ignore-scripts

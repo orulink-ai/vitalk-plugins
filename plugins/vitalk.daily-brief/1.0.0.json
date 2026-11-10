@@ -11,11 +11,11 @@
     "tasks.read",
     "tasks.write"
   ],
-  "publisher": "orulink-ai",
-  "repository": "https://github.com/orulink-ai/vitalk-plugin-daily-brief",
+  "publisher": "vilab-orulink",
+  "repository": "https://github.com/vilab-orulink/vitalk-plugin-daily-brief",
   "minHostVersion": "0.6.11",
   "artifact": {
-    "url": "https://github.com/orulink-ai/vitalk-plugin-daily-brief/releases/download/v1.0.0/vitalk.daily-brief.vitalk-plugin.json",
+    "url": "https://github.com/vilab-orulink/vitalk-plugin-daily-brief/releases/download/v1.0.0/vitalk.daily-brief.vitalk-plugin.json",
     "sha256": "599bc900b9a390a50cbb625cb0ac9c91997a531b99fed3efba606e99e4149ee7",
     "size": 404114
   }

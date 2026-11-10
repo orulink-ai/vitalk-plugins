@@ -25,7 +25,7 @@ node /你的目录/vitalk-plugins/publisher/cli.mjs \
 6. PR 检查通过后，由管理员检查插件功能、权限必要性、源码及包内容。合并后生成 `catalog.json`，客户端接入这个目录后可搜索和下载安装。PR 创建成功仅表示待审核。
 7. 修复或升级发布新 Release 版本，再执行同一命令。相同字节的待审版本重复执行复用原 PR；同版本变化会拒绝覆盖，需要升版本。
 
-目录地址：[catalog.json](https://orulink-ai.github.io/vitalk-plugins/catalog.json)。目录发布成功不代表当前所有 ViTalk 客户端已接入该地址。
+目录地址：[catalog.json](https://vilab-orulink.github.io/vitalk-plugins/catalog.json)。目录发布成功不代表当前所有 ViTalk 客户端已接入该地址。
 
 ## 管理员审核
 
@@ -54,9 +54,9 @@ npm --prefix publisher test
 
 ## 当前上架状态与验收边界
 
-截至 2026-10-06（Asia/Shanghai），[今日简报独立项目](https://github.com/orulink-ai/vitalk-plugin-daily-brief)已发布正式 `v1.0.0` 与 `v1.0.1` Release。`1.0.0` 的[上架 PR #2](https://github.com/orulink-ai/vitalk-plugins/pull/2)已审核合并，公共目录已有真实插件，不能再视为空目录。
+截至 2026-10-06（Asia/Shanghai），[今日简报独立项目](https://github.com/vilab-orulink/vitalk-plugin-daily-brief)已发布正式 `v1.0.0` 与 `v1.0.1` Release。`1.0.0` 的[上架 PR #2](https://github.com/vilab-orulink/vitalk-plugins/pull/2)已审核合并，公共目录已有真实插件，不能再视为空目录。
 
-`1.0.1` 的[更新 PR #4](https://github.com/orulink-ai/vitalk-plugins/pull/4)已通过检查、合并并部署，旧 `1.0.0` 固定清单与资产保留。后续待审版本不会影响已上架版本。开发者创建 Release 或 PR 不等于新版本已在 Store 上架，必须确认合并及目录部署结果。
+`1.0.1` 的[更新 PR #4](https://github.com/vilab-orulink/vitalk-plugins/pull/4)已通过检查、合并并部署，旧 `1.0.0` 固定清单与资产保留。后续待审版本不会影响已上架版本。开发者创建 Release 或 PR 不等于新版本已在 Store 上架，必须确认合并及目录部署结果。
 
 今日简报保留原页面与业务算法，使用公开 SDK 构建独立安装包。正式版本 1.0.2 已经由自动 PR #6 校验、合并和部署。在同一个隔离原生进程中，真实下载并安装 1.0.1，再通过 Store 更新至 1.0.2；权限确认、更新后重新启用、新页面绘制、SDK 读取保留数据、停用及卸载均通过。验收使用三条合成历史与只附加执行页面的 DOM 探针，持久化插件包保持 Release 原字节；真实云模型凭据与结果质量未验证。合成模型桥接与独立交互测试可以验证重新生成及连续复盘流程，不能冒充真实云模型成功。原生未配置模型时按错误边界验收，真实模型服务验证单独记录。
 

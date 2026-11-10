@@ -83,10 +83,10 @@ test("asset must match the declared repository and cannot use latest", () => {
   );
 });
 test("path and branch are derived from validated id/version and only carry metadata", () => {
-  const p = publicationPlan(make(), "orulink-ai/vitalk-plugins");
+  const p = publicationPlan(make(), "vilab-orulink/vitalk-plugins");
   assert.equal(p.path, "plugins/example.daily/1.0.0.json");
   assert.equal(p.branch, "codex/plugin-example.daily-1.0.0");
-  assert.equal(p.registry, "orulink-ai/vitalk-plugins");
+  assert.equal(p.registry, "vilab-orulink/vitalk-plugins");
   assert.equal(p.body.includes("<h1>fixture"), false);
   assert.throws(() => publicationPlan(make(), "../evil"));
 });
@@ -130,6 +130,6 @@ for (const id of ["vitalk.english", "vitalk.ai-conversation"]) {
       ...pkg, manifest: { ...pkg.manifest, id },
     }));
     assert.throws(() => make(release, reserved), /保留/);
-    assert.throws(() => publicationPlan({ ...make(), id }, "orulink-ai/vitalk-plugins"), /保留/);
+    assert.throws(() => publicationPlan({ ...make(), id }, "vilab-orulink/vitalk-plugins"), /保留/);
   });
 }

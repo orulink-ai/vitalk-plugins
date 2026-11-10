@@ -14,7 +14,7 @@ import { buildListing, publicationPlan } from "./publish.mjs";
 const args = process.argv.slice(2);
 if (args.includes("--help")) {
   console.log(
-    "vitalk-plugin-publish --repository owner/repo --tag v1.0.0 --asset id.vitalk-plugin.json --min-host 0.6.10 [--registry orulink-ai/vitalk-plugins] [--dry-run]",
+    "vitalk-plugin-publish --repository owner/repo --tag v1.0.0 --asset id.vitalk-plugin.json --min-host 0.6.10 [--registry vilab-orulink/vitalk-plugins] [--dry-run]",
   );
   process.exit(0);
 }
@@ -41,7 +41,7 @@ try {
     tag = option("--tag"),
     asset = option("--asset"),
     minimum = option("--min-host"),
-    registry = option("--registry", "orulink-ai/vitalk-plugins");
+    registry = option("--registry", "vilab-orulink/vitalk-plugins");
   if (
     !/^[A-Za-z0-9][A-Za-z0-9_.-]*\/[A-Za-z0-9][A-Za-z0-9_.-]*$/.test(
       repository,

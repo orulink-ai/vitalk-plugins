@@ -41,11 +41,11 @@ if(a[0]==='repo'&&a[1]==='view'){console.log(a.includes('viewerPermission')?JSON
 if(a[0]==='release'&&a[1]==='view'){console.log(JSON.stringify({tagName:'v1.0.0',isDraft:false,isPrerelease:false,assets:[{name:'daily.json',url:'https://github.com/example/daily/releases/download/v1.0.0/daily.json'}]}));process.exit(0);}
 if(a[0]==='release'&&a[1]==='download'){fs.writeFileSync(path.join(a[a.indexOf('--dir')+1],'daily.json'),JSON.stringify(pkg));process.exit(0);}
 if(a[0]==='repo'&&a[1]==='clone'){fs.mkdirSync(a[3],{recursive:true});process.exit(0);}
-if(a[0]==='pr'&&a[1]==='list'){console.log(JSON.stringify(process.env.MODE==='repeat'?[{url:'https://github.com/orulink-ai/vitalk-plugins/pull/1'}]:[]));process.exit(0);}
+if(a[0]==='pr'&&a[1]==='list'){console.log(JSON.stringify(process.env.MODE==='repeat'?[{url:'https://github.com/vilab-orulink/vitalk-plugins/pull/1'}]:[]));process.exit(0);}
 if(a[0]==='pr'&&a[1]==='checkout'){
  const crypto=require('node:crypto'),bytes=Buffer.from(JSON.stringify(pkg));const x={id:pkg.manifest.id,name:pkg.manifest.name,description:pkg.manifest.description,version:'1.0.0',sdkVersion:1,permissions:[],publisher:'example',repository:'https://github.com/example/daily',minHostVersion:'0.6.10',artifact:{url:'https://github.com/example/daily/releases/download/v1.0.0/daily.json',sha256:crypto.createHash('sha256').update(bytes).digest('hex'),size:bytes.length}};
  fs.mkdirSync('plugins/example.daily',{recursive:true});fs.writeFileSync('plugins/example.daily/1.0.0.json',JSON.stringify(x,null,2)+'\\n');process.exit(0);}
-if(a[0]==='pr'&&a[1]==='create'){console.log('https://github.com/orulink-ai/vitalk-plugins/pull/1');process.exit(0);}
+if(a[0]==='pr'&&a[1]==='create'){console.log('https://github.com/vilab-orulink/vitalk-plugins/pull/1');process.exit(0);}
 }
 if(tool==='git'&&a.includes('push')&&process.env.MODE==='push-failure')process.exit(1);
 `;
@@ -106,7 +106,7 @@ test("publishing clones upstream, pushes only listing to fork and reports pendin
     x.calls
       .find((c) => c.tool === "gh" && c.args[1] === "clone")
       .args.slice(0, 3),
-    ["repo", "clone", "orulink-ai/vitalk-plugins"],
+    ["repo", "clone", "vilab-orulink/vitalk-plugins"],
   );
   assert.deepEqual(
     x.calls.find((c) => c.tool === "git" && c.args[0] === "add").args,

@@ -19,6 +19,13 @@ test('Feishu permissions are only published to the capable-client channel',()=>{
  assert.equal(channels.v2.plugins.some(x=>x.id===feishu.id),false);
  assert.equal(channels.v3.plugins.some(x=>x.id===feishu.id),true);
 });
+test('official feature packages are published from vilab-orulink',()=>{
+ for(const entry of reviewed){
+  assert.equal(entry.publisher,'vilab-orulink');
+  assert.equal(entry.repository,`https://github.com/vilab-orulink/vitalk-plugin-${entry.feature}`);
+  assert.equal(entry.artifact.url.startsWith(`${entry.repository}/releases/download/v${entry.version}/`),true);
+ }
+});
 test('v2 lists three exact reviewed features, preserving community entries',()=>{
  const ordinary={id:'community.example'};
  const result=buildTrustedCatalog({format:'vitalk-plugin-catalog/v1',plugins:[ordinary]},reviewed);

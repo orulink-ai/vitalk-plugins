@@ -9,11 +9,11 @@
     "feishu.tasks",
     "feishu.calendar"
   ],
-  "publisher": "orulink-ai",
-  "repository": "https://github.com/orulink-ai/vitalk-plugin-feishu",
+  "publisher": "vilab-orulink",
+  "repository": "https://github.com/vilab-orulink/vitalk-plugin-feishu",
   "minHostVersion": "0.6.18",
   "artifact": {
-    "url": "https://github.com/orulink-ai/vitalk-plugin-feishu/releases/download/v0.1.3/vitalk-plugin-feishu.vitalk-plugin.json",
+    "url": "https://github.com/vilab-orulink/vitalk-plugin-feishu/releases/download/v0.1.3/vitalk-plugin-feishu.vitalk-plugin.json",
     "sha256": "b5a6c6401ce236199b7c0e16bfb3b9af468ad594ef363df1fd9bb6d54271989e",
     "size": 597707
   }
