@@ -1,0 +1,24 @@
+{
+  "id": "vitalk-plugin-feishu",
+  "name": "飞书",
+  "description": "用语音发送飞书消息、创建和管理任务与日程。支持联系人称呼、消息确认和飞书详情跳转。",
+  "version": "0.1.8",
+  "sdkVersion": 1,
+  "permissions": [
+    "external.open",
+    "feishu.messages",
+    "native.execute",
+    "ai.generate",
+    "storage",
+    "voice.commands",
+    "files.stage"
+  ],
+  "publisher": "vilab-orulink",
+  "repository": "https://github.com/vilab-orulink/vitalk-plugin-feishu",
+  "minHostVersion": "0.6.23",
+  "artifact": {
+    "url": "https://github.com/vilab-orulink/vitalk-plugin-feishu/releases/download/v0.1.8/vitalk-plugin-feishu.vitalk-plugin.json",
+    "sha256": "fd2ac5a330ec5d9da11e2309c01e017d2a8c7ef6cb699ed1326902e3c056f06f",
+    "size": 807298
+  }
+}
